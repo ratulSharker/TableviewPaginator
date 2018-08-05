@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'TableviewPaginator'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of TableviewPaginator.'
+  s.summary          = 'Paginating UITableview, Made easy.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,26 +17,25 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = "This pod help to paginate a UITableView. It provide a class named TableviewPaginator, which maintain all the nitty gritty offset calculation and maintain the showing the load more cell. All you need to implement some delegate and call some of method to let the class know all the state of the tableview. Few drop in solution exists but they all lack the feature is like providing custom load more cell, besides they work with UITableViewController or UITableView. None of them are generic solution. Thats why this pod comes in handy."
 
-  s.homepage         = 'https://github.com/sharker.ratul.08@gmail.com/TableviewPaginator'
+  s.homepage         = 'https://github.com/ratulSharker/TableviewPaginator'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'sharker.ratul.08@gmail.com' => 'ratul.sharker@ipay.com.bd' }
-  s.source           = { :git => 'https://github.com/sharker.ratul.08@gmail.com/TableviewPaginator.git', :tag => s.version.to_s }
+  s.author             = { "Ratul sharker" => "sharker.ratul.08@gmail.com" }
+  s.source           = { :git => 'https://github.com/ratulSharker/TableviewPaginator.git', :branch => 'master' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'TableviewPaginator/Classes/**/*'
+  s.swift_version = '4.0'
   
   # s.resource_bundles = {
   #   'TableviewPaginator' => ['TableviewPaginator/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
