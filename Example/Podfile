@@ -1,3 +1,5 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
 use_frameworks!
 platform :ios, '8.0'
 
@@ -6,8 +8,8 @@ inhibit_all_warnings!
 
 target 'TableviewPaginator_Example' do
   pod 'TableviewPaginator', :path => '../'
-  pod 'Alamofire', :inhibit_warnings => true
-  pod 'SDWebImage', :inhibit_warnings => true
+  pod 'Alamofire', '~> 4.7.3', :inhibit_warnings => true
+  pod 'SDWebImage', '~> 4.4.2', :inhibit_warnings => true
 
   target 'TableviewPaginator_Tests' do
     inherit! :search_paths

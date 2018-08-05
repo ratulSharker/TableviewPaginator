@@ -11,9 +11,9 @@ PODS:
   - TableviewPaginator (0.1.0)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 4.7.3)
   - FBSnapshotTestCase (~> 2.1.4)
-  - SDWebImage
+  - SDWebImage (~> 4.4.2)
   - TableviewPaginator (from `../`)
 
 SPEC REPOS:
@@ -32,6 +32,6 @@ SPEC CHECKSUMS:
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
   TableviewPaginator: 6056b68c865095eff2bc5993efaf38d503c6c99d
 
-PODFILE CHECKSUM: e70050adc0eb135cc481cffdc4c240a44d8821be
+PODFILE CHECKSUM: 1d03478c1abf41372ad807e3f8819ed0e729931e
 
 COCOAPODS: 1.5.3
