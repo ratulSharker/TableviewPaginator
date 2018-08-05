@@ -1,0 +1,4 @@
+included:
+ - TableviewPaginator
+exlcuded:
+ - Pods

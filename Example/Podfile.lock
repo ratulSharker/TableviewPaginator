@@ -1,0 +1,37 @@
+PODS:
+  - Alamofire (4.7.3)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - SDWebImage (4.3.2):
+    - SDWebImage/Core (= 4.3.2)
+  - SDWebImage/Core (4.3.2)
+  - TableviewPaginator (0.1.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - FBSnapshotTestCase (~> 2.1.4)
+  - SDWebImage (= 4.3.2)
+  - TableviewPaginator (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - FBSnapshotTestCase
+    - SDWebImage
+
+EXTERNAL SOURCES:
+  TableviewPaginator:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  SDWebImage: 29bd3c0bc1f01e5eb59720847c64ad4c4ca1af5d
+  TableviewPaginator: 6056b68c865095eff2bc5993efaf38d503c6c99d
+
+PODFILE CHECKSUM: a38daaf4a910a9b232443fdd5b556326f8548a9b
+
+COCOAPODS: 1.5.3
