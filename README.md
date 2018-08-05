@@ -1,6 +1,6 @@
 # TableviewPaginator
 
-[![CI Status](https://img.shields.io/travis/sharker.ratul.08@gmail.com/TableviewPaginator.svg?style=flat)](https://travis-ci.org/sharker.ratul.08@gmail.com/TableviewPaginator)
+[![CI Status](https://img.shields.io/travis/sharker.ratul.08@gmail.com/TableviewPaginator.svg?style=flat)](https://travis-ci.org/ratulSharker/TableviewPaginator.svg?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/TableviewPaginator.svg?style=flat)](https://cocoapods.org/pods/TableviewPaginator)
 [![License](https://img.shields.io/cocoapods/l/TableviewPaginator.svg?style=flat)](https://cocoapods.org/pods/TableviewPaginator)
 [![Platform](https://img.shields.io/cocoapods/p/TableviewPaginator.svg?style=flat)](https://cocoapods.org/pods/TableviewPaginator)
@@ -22,7 +22,7 @@ pod 'TableviewPaginator'
 
 ## Author
 
-sharker.ratul.08@gmail.com, ratul.sharker@ipay.com.bd
+sharker.ratul.08@gmail.com
 
 ## License
 
