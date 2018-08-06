@@ -4,6 +4,13 @@
 
 osx_image: xcode9.4
 language: objective-c
+
+env:
+ global:
+  - WORKSPACE='Example/TableviewPaginator.xcworkspace'
+  - EXAMPLE_SCHEME='TableviewPaginator-Example'
+  - IOS_DESTINATION='platform=iOS Simulator,name=iPhone 6 Plus,OS=11.4'
+
 # cache: cocoapods
 podfile: Example/Podfile
 xcode_sdk: iphonesimulator11.4
@@ -12,5 +19,7 @@ before_install:
  - pod repo update
  - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/TableviewPaginator.xcworkspace -scheme TableviewPaginator-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace "$WORKSPACE"  -scheme "$EXAMPLE_SCHEME" -destination "$IOS_DESTINATION" ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint --allow-warnings
+
+#set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace "Example/TableviewPaginator.xcworkspace"  -scheme "TableviewPaginator-Example" -destination "platform=iOS Simulator,name=iPhone 6 Plus,OS=11.4" ONLY_ACTIVE_ARCH=NO | xcpretty
