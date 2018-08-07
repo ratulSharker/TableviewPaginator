@@ -28,17 +28,20 @@ public protocol TableviewPaginatorProtocol: class {
 /// from the user
 public class TableviewPaginator {
 
-    private var tableview: UITableView
+    private struct PaginatorState {
+        var offset: Int = 0
+        var dataFetchingRunning: Bool = false
+        var allDataFetchingCompleted: Bool = false
+        var isAllRowSeeked: Bool = false
+    }
+
     private var refreshControl: UIRefreshControl?
-    private var offset: Int
-    private var dataFetchingRunning: Bool
-    private var allDataFetchingCompleted: Bool
-    private var isAllRowSeeked: Bool
+    private var state: PaginatorState = PaginatorState()
     private weak var paginatorUI: TableviewPaginatorUIProtocol?
     private weak var delegate: TableviewPaginatorProtocol?
 
-    private let defaultSections = 1
-    private let defaultRows = 0
+    private static let defaultSections = 1
+    private static let defaultRows = 0
 
     /// Instance initializer mehtod
     ///
@@ -46,15 +49,9 @@ public class TableviewPaginator {
     ///   - paginatorUI: an instance of TableviewPaginatorUIProtocol protocol implementor
     ///   - delegate: an instance of TableviewPaginatorProtocol protocol implementor
     required public init(paginatorUI: TableviewPaginatorUIProtocol, delegate: TableviewPaginatorProtocol) {
-        self.tableview = paginatorUI.getTableview()
         self.delegate = delegate
         self.paginatorUI = paginatorUI
-        dataFetchingRunning = false
-        allDataFetchingCompleted = false
-        isAllRowSeeked = false
-        offset = 0
         setupRefreshControl()
-
         // initial loading
         refreshControlPulled()
     }
@@ -66,7 +63,7 @@ public class TableviewPaginator {
         if paginatorUI?.shouldAddRefreshControl() ?? false {
             let refreshControl = UIRefreshControl()
             refreshControl.tintColor = paginatorUI?.getRefreshControlTintColor()
-            self.tableview.addSubview(refreshControl)
+            paginatorUI?.getTableview().addSubview(refreshControl)
             refreshControl.addTarget(self, action: #selector(refreshControlPulled), for: .valueChanged)
             self.refreshControl = refreshControl
         }
@@ -76,10 +73,10 @@ public class TableviewPaginator {
     /// if the UIRefreshControl is installed
     /// inside the tableview & Pulled
     @objc func refreshControlPulled() {
-        dataFetchingRunning = true
-        allDataFetchingCompleted = false
-        offset = 0
-        self.delegate?.loadPaginatedData(offset: offset, shouldAppend: false)
+        state.dataFetchingRunning = true
+        state.allDataFetchingCompleted = false
+        state.offset = 0
+        self.delegate?.loadPaginatedData(offset: state.offset, shouldAppend: false)
     }
 
     /// Call this method inside tableView(_ tableView: UITableView,
@@ -90,7 +87,7 @@ public class TableviewPaginator {
     /// - Parameter section: For which the number of extra cell is asked.
     /// - Returns: The number of load more cell in the given section.
     public func rowsIn(section: Int) -> Int {
-        return (isLastSection(section: section) && allDataFetchingCompleted == false) ? 1 : 0
+        return (isLastSection(section: section) && state.allDataFetchingCompleted == false) ? 1 : 0
     }
 
     /// Call this method inside tableView(_ tableView: UITableView,
@@ -106,7 +103,7 @@ public class TableviewPaginator {
     /// - Parameter indexPath: indexPath passed into the heightForRowAt tableview delegate
     /// - Returns: if last indexpath, height of load more cell is returned otherwise nil
     public func heightForLoadMore(cell indexPath: IndexPath) -> CGFloat? {
-        if  allDataFetchingCompleted == false,
+        if  state.allDataFetchingCompleted == false,
             isLastSectionRow(indexPath: indexPath) {// it's the last row of this section
             return paginatorUI?.getPaginatedLoadMoreCellHeight()
         } else {
@@ -122,9 +119,9 @@ public class TableviewPaginator {
     /// - Parameter indexPath: passed indexPath in tableview datasource method
     /// - Returns: if load more cell needed to be shown for this indexPath then a cell is returned.
     public func cellForLoadMore(at indexPath: IndexPath) -> UITableViewCell? {
-        if  allDataFetchingCompleted == false,
+        if  state.allDataFetchingCompleted == false,
             isLastSectionRow(indexPath: indexPath) {// it's the last row of this section
-            isAllRowSeeked = true
+            state.isAllRowSeeked = true
             return paginatorUI?.getPaginatedLoadMoreCell()
         } else {
             return nil
@@ -141,11 +138,11 @@ public class TableviewPaginator {
         let contentYoffset = scrollView.contentOffset.y
         let distanceFromBottom = scrollView.contentSize.height - contentYoffset
         if distanceFromBottom < height,
-            dataFetchingRunning == false, allDataFetchingCompleted == false,
-            isAllRowSeeked == true {
-            dataFetchingRunning = true
-            isAllRowSeeked = false
-            self.delegate?.loadPaginatedData(offset: offset, shouldAppend: true)
+            state.dataFetchingRunning == false, state.allDataFetchingCompleted == false,
+            state.isAllRowSeeked == true {
+            state.dataFetchingRunning = true
+            state.isAllRowSeeked = false
+            self.delegate?.loadPaginatedData(offset: state.offset, shouldAppend: true)
         }
     }
 
@@ -153,10 +150,10 @@ public class TableviewPaginator {
     ///
     /// - Parameter delta: Number of item, added in current page
     public func incrementOffsetBy(delta: Int) {
-        offset += delta
+        state.offset += delta
 
         if delta == 0 {
-            allDataFetchingCompleted = true
+            state.allDataFetchingCompleted = true
         }
     }
 
@@ -166,7 +163,7 @@ public class TableviewPaginator {
     /// and give controller flexibility
     public func partialDataFetchingDone() {
         refreshControl?.endRefreshing()
-        dataFetchingRunning = false
+        state.dataFetchingRunning = false
     }
 
     /// This method let controller know that the next page is loading or not
@@ -174,7 +171,7 @@ public class TableviewPaginator {
     ///
     /// - Returns: Is next page data fetching is running or not
     public func isDataFetchRunning() -> Bool {
-        return dataFetchingRunning
+        return state.dataFetchingRunning
     }
 
     /// This method let controller know that the last page is reached or not.
@@ -182,7 +179,7 @@ public class TableviewPaginator {
     ///
     /// - Returns: Is last page reached or not
     public func isAllDataFetchingCompleted() -> Bool {
-        return allDataFetchingCompleted
+        return state.allDataFetchingCompleted
     }
 
     /// This method determines that is the given indexPath is the
@@ -196,11 +193,17 @@ public class TableviewPaginator {
     /// - Parameter indexPath: Which needed to be test against last indexPath
     /// - Returns: true if parameter indexPath is last, otherwise false
     public func isLastSectionRow(indexPath: IndexPath) -> Bool {
-        let lastSection = tableview.dataSource?.numberOfSections?(in: tableview) ?? defaultSections
-        let lastRow = tableview.dataSource?.tableView(tableview,
-                                                      numberOfRowsInSection: indexPath.section) ?? defaultRows
+        if let tableview = paginatorUI?.getTableview() {
+            let lastSection = tableview.dataSource?.numberOfSections?(in: tableview)
+                ?? TableviewPaginator.defaultSections
+            let lastRow = tableview.dataSource?.tableView(tableview,
+                                                          numberOfRowsInSection: indexPath.section)
+                ?? TableviewPaginator.defaultRows
 
-        return lastSection == (indexPath.section+1) && lastRow == (indexPath.row+1)
+            return lastSection == (indexPath.section+1) && lastRow == (indexPath.row+1)
+        } else {
+            return false
+        }
     }
 
     /// This method determines that is the given section is the last 
@@ -211,7 +214,12 @@ public class TableviewPaginator {
     /// - Parameter section: Which needed to be test against last section
     /// - Returns: true if parameter section is last, otherwise false
     public func isLastSection(section: Int) -> Bool {
-        return ((section + 1) == tableview.dataSource?.numberOfSections?(in: tableview) ?? defaultSections )
+        if let tableview = paginatorUI?.getTableview() {
+            return ((section + 1) == tableview.dataSource?.numberOfSections?(in: tableview)
+                ?? TableviewPaginator.defaultSections )
+        } else {
+            return false
+        }
     }
 
 }
