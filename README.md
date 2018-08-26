@@ -3,6 +3,7 @@
 [![CI Status](https://travis-ci.org/ratulSharker/TableviewPaginator.svg?branch=master)](https://travis-ci.org/ratulSharker/TableviewPaginator)
 [![codebeat badge](https://codebeat.co/badges/e213907a-a6a3-4b9b-bca2-aad36067a9b7)](https://codebeat.co/projects/github-com-ratulsharker-tableviewpaginator-master)
 [![Version](https://img.shields.io/cocoapods/v/TableviewPaginator.svg?style=flat)](https://cocoapods.org/pods/TableviewPaginator)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/TableviewPaginator.svg?style=flat)](https://cocoapods.org/pods/TableviewPaginator)
 [![Platform](https://img.shields.io/cocoapods/p/TableviewPaginator.svg?style=flat)](https://cocoapods.org/pods/TableviewPaginator)
 [![Xcode](https://img.shields.io/badge/Xcode-9.4-blue.svg)](https://developer.apple.com/xcode)
@@ -19,12 +20,30 @@ pod try TableviewPaginator
 
 ## Installation
 
-TableviewPaginator is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+<details>
+<summary>CocoaPods</summary>
+</br>
+<p>TableviewPaginator is available through <a href="https://cocoapods.org">CocoaPods</a>. To install
+it, simply add the following line to your <code>Podfile</code>:</p>
 
-```ruby
-pod 'TableviewPaginator'
-```
+<pre>
+<code class='ruby language-ruby'>pod 'TableviewPaginator' </code></pre>
+</details>
+
+<details>
+<summary>Carthage</summary>
+</br>
+<p>TableviewPaginator is available throguh <a href="https://github.com/Carthage/Carthage">Carthage</a>, specify it in your <code>Cartfile</code>:</p>
+
+<pre><code class="ogdl language-ogdl">github "ratulSharker/TableviewPaginator" ~&gt; 0.1.0
+</code></pre>
+</details>
+
+<details>
+<summary>Manually</summary>
+</br>
+<p>Add the <a href="https://github.com/ratulSharker/TableviewPaginator/blob/master/TableviewPaginator/Classes/TableviewPaginator.swift">TableviewPaginator.swift</a> file to your Xcode project and you are good to go.</p>
+</details>
 
 ## Usage
 
