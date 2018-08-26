@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "TableviewPaginator_Example.app"
-               BlueprintName = "TableviewPaginator_Example"
-               ReferencedContainer = "container:TableviewPaginator.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "TableviewPaginator_Tests.xctest"
-               BlueprintName = "TableviewPaginator_Tests"
+               BlueprintIdentifier = "CA2154932132EE2300C18550"
+               BuildableName = "TableviewPaginator.framework"
+               BlueprintName = "TableviewPaginator"
                ReferencedContainer = "container:TableviewPaginator.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "TableviewPaginator_Tests.xctest"
-               BlueprintName = "TableviewPaginator_Tests"
-               ReferencedContainer = "container:TableviewPaginator.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "TableviewPaginator_Example.app"
-            BlueprintName = "TableviewPaginator_Example"
-            ReferencedContainer = "container:TableviewPaginator.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -75,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "TableviewPaginator_Example.app"
-            BlueprintName = "TableviewPaginator_Example"
+            BlueprintIdentifier = "CA2154932132EE2300C18550"
+            BuildableName = "TableviewPaginator.framework"
+            BlueprintName = "TableviewPaginator"
             ReferencedContainer = "container:TableviewPaginator.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -94,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "TableviewPaginator_Example.app"
-            BlueprintName = "TableviewPaginator_Example"
+            BlueprintIdentifier = "CA2154932132EE2300C18550"
+            BuildableName = "TableviewPaginator.framework"
+            BlueprintName = "TableviewPaginator"
             ReferencedContainer = "container:TableviewPaginator.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
