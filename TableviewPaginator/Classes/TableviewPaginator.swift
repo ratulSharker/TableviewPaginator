@@ -73,6 +73,13 @@ public class TableviewPaginator {
     /// if the UIRefreshControl is installed
     /// inside the tableview & Pulled
     @objc func refreshControlPulled() {
+        refresh()
+    }
+    
+    /// Call this method while you need to start fresh
+    /// calling this will have the same effect as refreshControlled
+    /// pulled over your tableView, this is just programatic way
+    public func refresh() {
         state.dataFetchingRunning = true
         state.allDataFetchingCompleted = false
         state.offset = 0

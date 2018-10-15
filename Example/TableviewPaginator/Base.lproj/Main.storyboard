@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5v3-af-62n">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5v3-af-62n">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEC-ip-7Ur">
-                                            <rect key="frame" x="8" y="8" width="359" height="216.5"/>
+                                            <rect key="frame" x="8" y="8" width="359" height="217"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7zO-Zf-ync">
                                                     <rect key="frame" x="119.5" y="8" width="120" height="120"/>
@@ -41,7 +41,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1y-0r-7cF">
-                                                    <rect key="frame" x="8" y="136" width="343" height="72.5"/>
+                                                    <rect key="frame" x="8" y="136" width="343" height="73"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                                     <color key="textColor" red="1" green="0.30588235294117649" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -87,7 +87,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="SbF-1N-Dok">
-                                            <rect key="frame" x="177" y="12" width="20" height="20"/>
+                                            <rect key="frame" x="177.5" y="12" width="20" height="20"/>
                                             <color key="color" red="1" green="0.30588235294117649" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </activityIndicatorView>
                                     </subviews>
@@ -188,7 +188,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ouz-nZ-CdI">
-                                                    <rect key="frame" x="8" y="8" width="359" height="216.5"/>
+                                                    <rect key="frame" x="8" y="8" width="359" height="217"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CQ1-ij-Q3d">
                                                             <rect key="frame" x="119.5" y="8" width="120" height="120"/>
@@ -203,7 +203,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNm-Uo-Yqd">
-                                                            <rect key="frame" x="8" y="136" width="343" height="72.5"/>
+                                                            <rect key="frame" x="8" y="136" width="343" height="73"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
                                                             <color key="textColor" red="1" green="0.30588235294117649" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -249,7 +249,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="UaT-8L-6US">
-                                                    <rect key="frame" x="177" y="12" width="20" height="20"/>
+                                                    <rect key="frame" x="177.5" y="12" width="20" height="20"/>
                                                     <color key="color" red="1" green="0.30588235294117649" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </activityIndicatorView>
                                             </subviews>
@@ -268,11 +268,30 @@
                                     <outlet property="delegate" destination="zvX-HD-bDg" id="oba-X9-WBW"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzY-Hg-fpH">
+                                <rect key="frame" x="315" y="490" width="44" height="44"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.2470588235" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OC8-Hp-5vh"/>
+                                    <constraint firstAttribute="width" constant="44" id="YfW-LX-XX5"/>
+                                </constraints>
+                                <state key="normal" image="reload-white"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onRefreshButtonPressed:" destination="zvX-HD-bDg" eventType="touchUpInside" id="wIL-wH-Cni"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tac-At-Whw" firstAttribute="leading" secondItem="UWC-Q8-eXE" secondAttribute="leading" id="57C-Yy-iot"/>
                             <constraint firstItem="tac-At-Whw" firstAttribute="top" secondItem="AHk-OL-EpD" secondAttribute="bottom" id="QGT-uL-Bd2"/>
+                            <constraint firstItem="tI4-nX-qfh" firstAttribute="top" secondItem="RzY-Hg-fpH" secondAttribute="bottom" constant="20" id="Sy5-OC-jo1"/>
+                            <constraint firstAttribute="trailing" secondItem="RzY-Hg-fpH" secondAttribute="trailing" constant="16" id="bUd-p8-gS9"/>
                             <constraint firstItem="tI4-nX-qfh" firstAttribute="top" secondItem="tac-At-Whw" secondAttribute="bottom" id="lmb-Vc-Mgi"/>
                             <constraint firstAttribute="trailing" secondItem="tac-At-Whw" secondAttribute="trailing" id="wJi-99-ZHT"/>
                         </constraints>
@@ -284,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="95Q-J1-58N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="422"/>
+            <point key="canvasLocation" x="1932" y="421.43928035982015"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cjP-j3-SnJ">
@@ -317,6 +336,7 @@
     <resources>
         <image name="list-filled" width="24" height="24"/>
         <image name="list-hollow" width="24" height="24"/>
+        <image name="reload-white" width="24" height="24"/>
         <image name="table-filled" width="24" height="24"/>
         <image name="table-hollow" width="24" height="24"/>
     </resources>

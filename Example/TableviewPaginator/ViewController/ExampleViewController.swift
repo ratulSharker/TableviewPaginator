@@ -23,6 +23,11 @@ class ExampleViewController: UIViewController {
         viewModel = ExampleViewModel(delegate: self)
         tableviewPaginator = TableviewPaginator(paginatorUI: self, delegate: self)
     }
+
+    @IBAction func onRefreshButtonPressed(_ sender: Any) {
+        tableviewPaginator?.refresh()
+    }
+
 }
 
 extension ExampleViewController: TableviewPaginatorUIProtocol {

@@ -16,6 +16,7 @@ class ExampleTableViewController: UITableViewController {
     private let limit = 3
 
     override func viewDidLoad() {
+        super.viewDidLoad()
 
         viewModel = ExampleViewModel(delegate: self)
         tableviewPaginator = TableviewPaginator.init(paginatorUI: self, delegate: self)
