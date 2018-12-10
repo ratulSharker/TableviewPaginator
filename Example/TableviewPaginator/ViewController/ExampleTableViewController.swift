@@ -20,6 +20,7 @@ class ExampleTableViewController: UITableViewController {
 
         viewModel = ExampleViewModel(delegate: self)
         tableviewPaginator = TableviewPaginator.init(paginatorUI: self, delegate: self)
+        tableviewPaginator?.initialSetup()
     }
 
 }

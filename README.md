@@ -59,12 +59,13 @@ import TableviewPaginator
 private var tableviewPaginator: TableviewPaginator?
 ```
 
-<b>Step 3:</b> Initialize the `tableviewPaginator` in your `viewDidLoad` callback. Note that, before doing `tableviewPaginator` initialization, initialize your viewModel classes (from where you supply the data to view controller).
+<b>Step 3:</b> Initialize the `tableviewPaginator` in your `viewDidLoad` callback. Note that, before doing `initialSetup` method call, initialize your viewModel classes (from where you supply the data to view controller).
 
 ```swift
 override func viewDidLoad() {
   // do all you model setup before initializing the tableviewPaginator
   tableviewPaginator = TableviewPaginator.init(paginatorUI: self, delegate: self)
+  tableviewPaginator?.initialSetup()
 }
 ```
 

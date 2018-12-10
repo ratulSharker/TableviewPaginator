@@ -22,6 +22,7 @@ class ExampleViewController: UIViewController {
 
         viewModel = ExampleViewModel(delegate: self)
         tableviewPaginator = TableviewPaginator(paginatorUI: self, delegate: self)
+        tableviewPaginator?.initialSetup()
     }
 
     @IBAction func onRefreshButtonPressed(_ sender: Any) {
