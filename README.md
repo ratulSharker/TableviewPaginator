@@ -74,19 +74,19 @@ Implementing `TableviewPaginatorUIProtocol`
 
 ```swift
 extension YourViewController: TableviewPaginatorUIProtocol {
-    func getTableview() -> UITableView {
+    func getTableview(paginator: TableviewPaginator) -> UITableView {
         return yourTableview
     }
 
-    func shouldAddRefreshControl() -> Bool {
+    func shouldAddRefreshControl(paginator: TableviewPaginator) -> Bool {
         return true
     }
 
-    func getPaginatedLoadMoreCellHeight() -> CGFloat {
+    func getPaginatedLoadMoreCellHeight(paginator: TableviewPaginator) -> CGFloat {
         return 44
     }
 
-    func getPaginatedLoadMoreCell() -> UITableViewCell {
+    func getPaginatedLoadMoreCell(paginator: TableviewPaginator) -> UITableViewCell {
         if let cell = yourTableview.dequeueReusableCell(withIdentifier: "YOUR_LOAD_MORE_CELL_IDENTIFIER") as? YourLoadMoreCell {
             // customize your load more cell
             // i.e start animating the UIActivityIndicator inside of the cell
@@ -96,7 +96,7 @@ extension YourViewController: TableviewPaginatorUIProtocol {
         }
     }
 
-    func getRefreshControlTintColor() -> UIColor {
+    func getRefreshControlTintColor(paginator: TableviewPaginator) -> UIColor {
         return yourColorOfChoice
     }
 }
@@ -106,7 +106,7 @@ Implementing `TableviewPaginatorProtocol`
 
 ```swift
 extension YourViewController: TableviewPaginatorProtocol {
-    func loadPaginatedData(offset: Int, shouldAppend: Bool) {
+    func loadPaginatedData(offset: Int, shouldAppend: Bool, paginator: TableviewPaginator) {
         // call your data populating method here
         // i.e given below
         yourViewModel?.fetchData(offset: offset, limit: yourDataFetchLimit, shouldAppend: shouldAppend)

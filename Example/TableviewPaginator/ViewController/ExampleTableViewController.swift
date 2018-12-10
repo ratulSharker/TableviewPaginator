@@ -65,19 +65,19 @@ extension ExampleTableViewController {
 }
 
 extension ExampleTableViewController: TableviewPaginatorUIProtocol {
-    func getTableview() -> UITableView {
+    func getTableview(paginator: TableviewPaginator) -> UITableView {
         return tableView
     }
 
-    func shouldAddRefreshControl() -> Bool {
+    func shouldAddRefreshControl(paginator: TableviewPaginator) -> Bool {
         return true
     }
 
-    func getPaginatedLoadMoreCellHeight() -> CGFloat {
+    func getPaginatedLoadMoreCellHeight(paginator: TableviewPaginator) -> CGFloat {
         return 44
     }
 
-    func getPaginatedLoadMoreCell() -> UITableViewCell {
+    func getPaginatedLoadMoreCell(paginator: TableviewPaginator) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ExampleLoadMoreCell") as? ExampleLoadMoreCell {
             cell.mViewActivityIndicator.startAnimating()
             cell.mViewActivityIndicator.isHidden = false
@@ -87,13 +87,13 @@ extension ExampleTableViewController: TableviewPaginatorUIProtocol {
         }
     }
 
-    func getRefreshControlTintColor() -> UIColor {
+    func getRefreshControlTintColor(paginator: TableviewPaginator) -> UIColor {
         return Constants.tintColor
     }
 }
 
 extension ExampleTableViewController: TableviewPaginatorProtocol {
-    func loadPaginatedData(offset: Int, shouldAppend: Bool) {
+    func loadPaginatedData(offset: Int, shouldAppend: Bool, paginator: TableviewPaginator) {
         viewModel?.fetchUsers(offset: offset, limit: limit, shouldAppend: shouldAppend)
     }
 }
