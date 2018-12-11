@@ -2,14 +2,14 @@
 # * https://www.objc.io/issues/6-build-tools/travis-ci/
 # * https://github.com/supermarin/xcpretty#usage
 
-osx_image: xcode9.4
-language: objective-c
+osx_image: xcode10.1
+language: swift
 
 env:
  global:
   - WORKSPACE='Example/TableviewPaginator.xcworkspace'
   - EXAMPLE_SCHEME='TableviewPaginator-Example'
-  - IOS_DESTINATION='platform=iOS Simulator,name=iPhone 6 Plus,OS=11.4'
+  - IOS_DESTINATION='platform=iOS Simulator,name=iPhone 6 Plus,OS=12.1'
 
 # cache: cocoapods
 podfile: Example/Podfile
@@ -22,4 +22,4 @@ script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace "$WORKSPACE"  -scheme "$EXAMPLE_SCHEME" -destination "$IOS_DESTINATION" ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint --allow-warnings
 
-#set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace "Example/TableviewPaginator.xcworkspace"  -scheme "TableviewPaginator-Example" -destination "platform=iOS Simulator,name=iPhone 6 Plus,OS=11.4" ONLY_ACTIVE_ARCH=NO | xcpretty
+#set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace "Example/TableviewPaginator.xcworkspace"  -scheme "TableviewPaginator-Example" -destination "platform=iOS Simulator,name=iPhone 6 Plus,OS=12.1" ONLY_ACTIVE_ARCH=NO | xcpretty
