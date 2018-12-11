@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/cocoapods/l/TableviewPaginator.svg?style=flat)](https://cocoapods.org/pods/TableviewPaginator)
 [![Platform](https://img.shields.io/cocoapods/p/TableviewPaginator.svg?style=flat)](https://cocoapods.org/pods/TableviewPaginator)
 [![Xcode](https://img.shields.io/badge/Xcode-10.1-blue.svg)](https://developer.apple.com/xcode)
-[![Swift](https://img.shields.io/badge/Swift-4.2-blue.svg)](https://swift.org)
+[![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org)
 
 ## <a href="https://appetize.io/embed/7799zdgrhftqg8b2gpc73n4ct8?device=iphone6s&scale=75&orientation=portrait&osVersion=11.4">Live Demonstration</a>
 
@@ -182,6 +182,7 @@ Here the `dataCount` parameter denoting the newly added number of data, more pre
 
 ## Tips
 1. `TableviewPaginator` is a pure swift class. If you intend to use multiple paginator in the single view controller (use case like, showing two different tableview in a single view controller, switching between them using the Segmented control) you may want to check against the passed `paginator` object for identifying which paginator is calling this delegate method. In that case user `===` **Identity Operators** to check for reference equality.
+2. Whenever you want to know that any data fetching is running or not use `YOUR_PAGINATOR.state.dataFetchingRunning`. This `Bool` will let you know that status. To check that all the data (all the pages) use `YOUT_PAGINATOR.state.allDataFetchingCompleted` this `Bool`. To know about the current offset use `state.offset`.
 
 ## Author
 

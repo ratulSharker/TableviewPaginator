@@ -28,15 +28,15 @@ public protocol TableviewPaginatorProtocol: class {
 /// from the user
 public class TableviewPaginator {
 
-    private struct PaginatorState {
-        var offset: Int = 0
-        var dataFetchingRunning: Bool = false
-        var allDataFetchingCompleted: Bool = false
+    public struct PaginatorState {
+        public var offset: Int = 0
+        public var dataFetchingRunning: Bool = false
+        public var allDataFetchingCompleted: Bool = false
         var isAllRowSeeked: Bool = false
     }
 
     private var refreshControl: UIRefreshControl?
-    private var state: PaginatorState = PaginatorState()
+    public private(set) var state: PaginatorState = PaginatorState()
     private weak var paginatorUI: TableviewPaginatorUIProtocol?
     private weak var delegate: TableviewPaginatorProtocol?
 
@@ -175,22 +175,6 @@ public class TableviewPaginator {
     public func partialDataFetchingDone() {
         refreshControl?.endRefreshing()
         state.dataFetchingRunning = false
-    }
-
-    /// This method let controller know that the next page is loading or not
-    /// Controller may show different status based on this.
-    ///
-    /// - Returns: Is next page data fetching is running or not
-    public func isDataFetchRunning() -> Bool {
-        return state.dataFetchingRunning
-    }
-
-    /// This method let controller know that the last page is reached or not.
-    /// Controller may show different status based on this.
-    ///
-    /// - Returns: Is last page reached or not
-    public func isAllDataFetchingCompleted() -> Bool {
-        return state.allDataFetchingCompleted
     }
 
     /// This method determines that is the given indexPath is the
