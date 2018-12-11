@@ -42,9 +42,6 @@ public class TableviewPaginator {
 
     private static let defaultSections = 1
     private static let defaultRows = 0
-    
-    private static var MARKER: Int64 = 0
-    fileprivate let identifier: Int64
 
     /// Instance initializer mehtod
     ///
@@ -54,11 +51,7 @@ public class TableviewPaginator {
     required public init(paginatorUI: TableviewPaginatorUIProtocol, delegate: TableviewPaginatorProtocol) {
         self.delegate = delegate
         self.paginatorUI = paginatorUI
-        
-        identifier = TableviewPaginator.MARKER
-        TableviewPaginator.MARKER += 1
     }
-    
     
     /// Initial setup method
     /// - Helps in setting up the callbacks. Must be called after initialization
@@ -238,13 +231,5 @@ public class TableviewPaginator {
         } else {
             return false
         }
-    }
-
-}
-
-// Extension for implementation of Equatable
-extension TableviewPaginator: Equatable {
-    public static func == (lhs: TableviewPaginator, rhs: TableviewPaginator) -> Bool {
-        return lhs.identifier == rhs.identifier
     }
 }

@@ -6,7 +6,8 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-Compatible-brightgreen.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License](https://img.shields.io/cocoapods/l/TableviewPaginator.svg?style=flat)](https://cocoapods.org/pods/TableviewPaginator)
 [![Platform](https://img.shields.io/cocoapods/p/TableviewPaginator.svg?style=flat)](https://cocoapods.org/pods/TableviewPaginator)
-[![Xcode](https://img.shields.io/badge/Xcode-9.4-blue.svg)](https://developer.apple.com/xcode)
+[![Xcode](https://img.shields.io/badge/Xcode-10.1-blue.svg)](https://developer.apple.com/xcode)
+[![Swift](https://img.shields.io/badge/Swift-4.2-blue.svg)](https://swift.org)
 
 ## <a href="https://appetize.io/embed/7799zdgrhftqg8b2gpc73n4ct8?device=iphone6s&scale=75&orientation=portrait&osVersion=11.4">Live Demonstration</a>
 
@@ -178,6 +179,9 @@ extension YourViewController: YourViewModelProtocol {
 }
 ```
 Here the `dataCount` parameter denoting the newly added number of data, more precisely newly added number of rows.
+
+## Tips
+1. `TableviewPaginator` is a pure swift class. If you intend to use multiple paginator in the single view controller (use case like, showing two different tableview in a single view controller, switching between them using the Segmented control) you may want to check against the passed `paginator` object for identifying which paginator is calling this delegate method. In that case user `===` **Identity Operators** to check for reference equality.
 
 ## Author
 
