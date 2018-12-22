@@ -36,7 +36,7 @@ it, simply add the following line to your <code>Podfile</code>:</p>
 </br>
 <p>TableviewPaginator is available throguh <a href="https://github.com/Carthage/Carthage">Carthage</a>, specify it in your <code>Cartfile</code>:</p>
 
-<pre><code class="ogdl language-ogdl">github "ratulSharker/TableviewPaginator" ~&gt; 0.1.0
+<pre><code class="ogdl language-ogdl">github "ratulSharker/TableviewPaginator" ~&gt; 0.3.3
 </code></pre>
 </details>
 
